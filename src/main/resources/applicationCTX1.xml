@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="student2" class="com.javatest.ex.Student">
@@ -27,16 +29,8 @@
 		</property>
 	</bean>
 	
-	<bean id="family" class="com.javatest.ex.Family">
-		<constructor-arg>
-			<value>순신아버지</value>
-		</constructor-arg>
-		<constructor-arg>
-			<value>순신어머니</value>
-		</constructor-arg>
-		<property name="sister">
-			<value>순신여동생</value>
-		</property>
+	<bean id="family" class="com.javatest.ex.Family" c:father="순신아버지" c:mother="순신어머니" p:sister="순신여동생"> <!--  c-생성자, p-프로퍼티 -->
+		
 		<property name="brother">
 			<value>순신남동생</value>
 		</property>		
